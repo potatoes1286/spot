@@ -203,7 +203,6 @@ const EMPTY_IMAGE: &'static [Image] = &[Image {
     width: Some(640),
 }];
 
-
 impl WithImages for Playlist {
     fn images(&self) -> &[Image] {
         match &self.images {
