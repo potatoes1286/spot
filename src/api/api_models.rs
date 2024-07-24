@@ -197,13 +197,18 @@ pub struct PlaylistOwner {
     pub display_name: String,
 }
 
-const def_image: &'static [Image] = &[Image {url: String::new(), height: Some(640), width: Some(640)}];
+const EMPTY_IMAGE: &'static [Image] = &[Image {
+    url: String::new(),
+    height: Some(640),
+    width: Some(640),
+}];
+
 
 impl WithImages for Playlist {
     fn images(&self) -> &[Image] {
         match &self.images {
             Some(x) => &x[..],
-            None => &def_image[..],
+            None => &EMPTY_IMAGE[..],
         }
     }
 }
